@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           .menu-grid{
+            display:grid ;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 40px;
+            row-gap: 40px;
+           }
+           .bottom-buttons-grid{
+            display:grid;
+            grid-template-columns: 1fr 1fr ;
+            column-gap: 40px;
+            row-gap: 40px;
+            margin-top: 30px;
+
+           }
+         
+           .menu-name{
+            display: block;
+           }
+            .new-menu a {
+            text-decoration: none;
+           }
+           .menu-img{
+            width: 100%;
+           }
+           .logo-img{
+            width: 200px;
+            height: 58;
+           }
+           .logo-container{
+            display: inline-block;
+            margin-right: 100px;
+
+           }
+           header{
+           border-bottom:  1px solid #dcdcdc;
+           display: flex;
+           align-items: center; /* 縦方向の中央揃え */
+           justify-content: space-between; /* 左右に配置 */
+           padding: 10px 20px; /* ヘッダー内に余白を追加 */
+           
+          }
+           .header-clicks{
+            display: inline-block;
+
+           }
+           .header-clicks a{
+            text-decoration: none;
+            font-weight: bold;
+            font-size: large;
+            color: white;
+            font-family: "Noto Sans JP", sans-serif;
+            margin-right:50px;
+            margin-right: 50px;
+            padding: 10px 10px;
+            background-color: #1da1f2; 
+            border-radius: 10px;
+            transition: background-color 0.3s ease; 
+           }
+           .header-clicks a:hover {
+            background-color: #4CAF50; 
+           }
+           .header-right {
+             display: flex;
+            align-items: center;
+            }
+            .user-info {
+                margin-right: 20px;
+            }         
+           .logout{
+            margin-top:4px;
+            text-align: right;
+	
+            }
+            .logout-button {
+            background-color: #f6724f;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: large;
+            color: white;
+            font-family: "Noto Sans JP", sans-serif;
+            padding: 10px 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease; 
+            cursor: pointer;
+            border: none;
+            }
+            h1 {
+			padding: 1em ;
+			font-size:1rem;
+			min-height: auto;
+			color: white;
+			background-color: #4CAF50;
+			text-align: center;
+
+		}
+            .bottom-buttons-grid button{
+                position: relative;
+                display: block;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                border: 2px solid #ddd;
+                border-radius: 25px;
+                padding: 14px 40px 14px 28px;
+                background-color: #fff;
+                line-height: 1.2;
+                color: #0171a6;
+                font-size: 1.133333rem;
+                font-family: "Noto Sans JP";
+                font-weight: 500;
+                text-align: center;
+                text-decoration: none ;
+                transition: all 0.2s;
+                text-shadow:0px 0px 0.1px rgba(51,51,51,0.5);
+                cursor: pointer;
+                }   
+                
+          
+            
+            footer{
+                height: 50px;
+                width: 100vw;
+                margin-top: 50px;
+                padding: 1em;
+                color: #ffffff;
+                background-color: #cccccc;
+            }
+            .copyright{
+                width: 100%;
+                text-align: center;
+                font-size: 15px;
+            }
+            .user-info {
+                margin-right: 20px; /* ログアウトボタンとの間に余白を追加 */
+                font-size: medium; /* フォントサイズを他のテキストと統一 */
+                font-weight: normal; /* ユーザ名の太さを他のテキストと統一 */
+                color: #1da1f2; /* デザインに合わせた青色を採用 */
+                display: flex;
+                align-items: center;
+            }
+
+.user-label {
+    margin-right: 5px; /* ラベルとユーザ名の間に余白を追加 */
+    color: #4CAF50; /* ラベル部分の色を少し異なる緑色に設定 */
+    font-weight: bold; /* ラベル部分を太字に */
+}
+
+.user-name {
+    color: #333; /* 落ち着いたダークグレーの文字色 */
+    font-weight: bold; /* ユーザ名を太字に */
+}
+
+
+            
+   
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <img src="logo_fm_big.png" class="logo-img">
+            </div>
+            <div class="header-clicks">
+                <a href="USgeneral.jsp" class="user-page">
+                    ユーザページ
+                </a>
+                <a href="SHtest.jsp" class="user-page">
+                    商品一覧               
+                </a>
+                <a href="FMtest.jsp" class="user-page">
+                    都道府県データ                
+                </a>
+                <a href="FMrank1.jsp" class="user-page">
+                    ランキング                
+                </a>            
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                      <span class="user-label">ユーザ名 :</span>
+                </div>
+                <div class="logout">
+                      <button class="logout-button" onclick="logout();">LOGOUT</button>
+                </div>
+
+        </header>
+       
+        <h1>今週のおすすめ商品</h1>
+        <div class="menu-grid">
+            <div class="new-menu">
+                <img src="jelly.jpg" class="menu-img">
+                <a href="https://www.family.co.jp/goods/dessert/1941487.html" class="menu-name">
+                    涼パフェ～いちごと桃ジュレ～</a>
+            </div>
+            <div class="new-menu">
+                <img src="mapo.jpg"  class="menu-img">
+                <a href="https://www.family.co.jp/goods/obento/0730396.html" class="menu-name">【たぶん40%増量作戦】増量コクと香りが決め手の麻婆豆腐丼
+                </a>
+            </div>
+            <div class="new-menu">
+                <img src="salad.jpg"  class="menu-img">
+                <a href="https://www.family.co.jp/goods/deli/1020380.html" class="menu-name">冷たいスープ　かぼちゃのポタージュ   
+                </a>
+            </div>
+            <div class="new-menu">
+                <img src="sandwich.jpg"  class="menu-img">
+                    <a href="https://www.family.co.jp/goods/sandwich/0910224.html" class="menu-name">【ルイージキャンペーン】ルイージのグリーン野菜サンド 
+                    </a>
+            </div> 
+            <div class="new-menu">
+                <img src="mellonPan.jpg"  class="menu-img">
+                <a href="https://www.family.co.jp/goods/bread/1531213.html" class="menu-name">生メロンパン 
+                </a>
+            </div>  
+            <div class="new-menu">
+                <img src="ramen.jpg"  class="menu-img">
+                <a href="https://www.family.co.jp/goods/noodle/0812917.html" class="menu-name">魚介豚骨スープが決め手　冷しつけ麺
+                </a>
+            </div>           
+        </div>
+        <div class="bottom-buttons-grid">
+            <button class="weekly-menu"  onclick="location.href='https://www.family.co.jp/goods/newgoods.html'" >   
+                今週の新商品一覧
+            </button>
+            <button class="goods-info" onclick="location.href='https://www.family.co.jp/goods.html'" >   
+                商品情報TOP
+            </button>
+        </div>   
+        <footer>
+            <div class="copyright">
+                <p>&copy; 2024 WISS1, Inc. All Rights Reserved.</p>
+            </div>		 	
+       </footer>
+
+    </body>
+</html>
